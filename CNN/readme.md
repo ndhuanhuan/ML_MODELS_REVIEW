@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/32294261/what-is-depth-of-a-convolutional-neural-network
