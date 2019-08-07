@@ -22,3 +22,10 @@ https://www.paperweekly.site/papers/notes/145
 ## Faster-RCNN
 https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/
 https://medium.com/@smallfishbigsea/faster-r-cnn-explained-864d4fb7e3f8
+
+
+## Difference between Batch Gradient Descent and Stochastic Gradient Descent
+https://towardsdatascience.com/difference-between-batch-gradient-descent-and-stochastic-gradient-descent-1187f1291aa1
+
+## 李宏毅机器学习笔记(LeeML-Notes)
+https://datawhalechina.github.io/leeml-notes/#/
