@@ -32,4 +32,8 @@ Network in Network Layers
 
 Dilated Convolution
 In simple terms, dilated convolution is just a convolution applied to input with defined gaps.
+In short, dilated convolution is a simple but effective idea and you might consider it in two cases;
+1. Detection of fine-details by processing inputs in higher resolutions.
+2. Broader view of the input to capture more contextual information.
+3. Faster run-time with less parameters
 http://www.erogol.com/dilated-convolution/
