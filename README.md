@@ -3,7 +3,10 @@ init commit
 
 cd C:\Users\Di\Documents\GitHub\deep_learning_cookbook
 
-
+## Failed to import pydot
+https://github.com/AppliedDataSciencePartners/DeepReinforcementLearning/issues/3
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
 
 # Papers
 
