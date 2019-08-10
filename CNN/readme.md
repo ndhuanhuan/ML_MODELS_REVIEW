@@ -24,3 +24,8 @@ The intuitive reasoning behind this layer is that once we know that a specific f
  
 1. The first is that the amount of parameters or weights is reduced by 75%, thus lessening the computation cost. 
 2. The second is that it will control overfitting. 
+
+Dropout Layers
+This layer “drops out” a random set of activations in that layer by setting them to zero.
+
+Network in Network Layers
