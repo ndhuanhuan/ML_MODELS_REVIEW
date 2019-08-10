@@ -17,3 +17,10 @@ In the early layers of our network, we want to preserve as much information abou
 ReLU (Rectified Linear Units) Layers
 
 After each conv layer, it is convention to apply a nonlinear layer (or activation layer) immediately afterward.The purpose of this layer is to introduce nonlinearity to a system that basically has just been computing linear operations during the conv layers (just element wise multiplications and summations).In the past, nonlinear functions like tanh and sigmoid were used, but researchers found out that ReLU layers work far better because the network is able to train a lot faster (because of the computational efficiency) without making a significant difference to the accuracy.
+
+Pooling Layers
+After some ReLU layers, programmers may choose to apply a pooling layer. It is also referred to as a downsampling layer.
+The intuitive reasoning behind this layer is that once we know that a specific feature is in the original input volume (there will be a high activation value), its exact location is not as important as its relative location to the other features. As you can imagine, this layer drastically reduces the spatial dimension (the length and the width change but not the depth) of the input volume.
+ 
+1. The first is that the amount of parameters or weights is reduced by 75%, thus lessening the computation cost. 
+2. The second is that it will control overfitting. 
