@@ -29,3 +29,7 @@ Dropout Layers
 This layer “drops out” a random set of activations in that layer by setting them to zero.
 
 Network in Network Layers
+
+Dilated Convolution
+In simple terms, dilated convolution is just a convolution applied to input with defined gaps.
+http://www.erogol.com/dilated-convolution/
