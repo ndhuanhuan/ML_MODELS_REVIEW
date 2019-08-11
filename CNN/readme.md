@@ -41,3 +41,9 @@ In short, dilated convolution is a simple but effective idea and you might consi
 2. Broader view of the input to capture more contextual information.
 3. Faster run-time with less parameters
 http://www.erogol.com/dilated-convolution/
+
+## Batch normalization in Neural Networks
+https://towardsdatascience.com/batch-normalization-in-neural-networks-1ac91516821c
+We train our data on only black cats’ images. So, if we now try to apply this network to data with colored cats, it is obvious; we’re not going to do well. The training set and the prediction set are both cats’ images but they differ a little bit. In other words, if an algorithm learned some X to Y mapping, and if the distribution of X changes, then we might need to retrain the learning algorithm by trying to align the distribution of X with the distribution of Y.
+
+batch normalization allows each layer of a network to learn by itself a little bit more independently of other layers.
