@@ -32,3 +32,8 @@ https://towardsdatascience.com/difference-between-batch-gradient-descent-and-sto
 
 ## 李宏毅机器学习笔记(LeeML-Notes)
 https://datawhalechina.github.io/leeml-notes/#/
+
+
+# Q & A
+## Activation functions
+https://towardsdatascience.com/activation-functions-and-its-types-which-is-better-a9a5310cc8f
