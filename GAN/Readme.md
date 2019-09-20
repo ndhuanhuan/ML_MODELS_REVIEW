@@ -15,3 +15,4 @@ https://www.kaggle.com/c/generative-dog-images/notebooks
 
 ## DCGAN
 https://towardsdatascience.com/deeper-into-dcgans-2556dbd0baac
+https://machinelearningmastery.com/how-to-code-generative-adversarial-network-hacks/
