@@ -58,3 +58,7 @@ https://machinelearningmastery.com/introduction-to-1x1-convolutions-to-reduce-th
 - The projection created by a 1×1 can also be used directly or be used to increase the number of feature maps in a model.
 
 The 1×1 filter is so simple that it does not involve any neighboring pixels in the input; it may not be considered a convolutional operation. Instead, it is a linear weighting or projection of the input
+
+
+## A Gentle Introduction to Padding and Stride for Convolutional Neural Networks
+https://machinelearningmastery.com/padding-and-stride-for-convolutional-neural-networks/
