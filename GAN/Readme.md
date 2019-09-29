@@ -57,4 +57,6 @@ Two most commonly used and accepted metrics for statistically evaluating the qua
 
 The advantage of those two metrics is that they have been extensively validated to be highly correlated with at least some desirable property such as visual appeal or realism of the image. The inception score was designed solely around the idea that the samples should be recognizable, but it has also been shown to correlate with human intuition about what constitutes a real image.
 
-
+#### Evaluation - Inception score
+1. We take the Kullback–Leibler (KL) divergence between the real and the generated distribution
+2. We exponentiate the result of step 1.
