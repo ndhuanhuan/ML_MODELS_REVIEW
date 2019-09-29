@@ -31,10 +31,10 @@ The Generator is not concerned with how well the Discriminator classifies the re
 
 For each training iteration do
   1. Train the Discriminator:
-    * Take a random mini-batch of real examples: x.
-    * Take a mini-batch of random noise vectors z and generate a mini-batch of fake examples: G(z) = x*.
-    * Compute the classification losses for D(x) and D(x*), and backpropagate the total error to update θ(D) to minimize the classification loss.
+     (1)Take a random mini-batch of real examples: x.
+     (2)Take a mini-batch of random noise vectors z and generate a mini-batch of fake examples: G(z) = x*.
+     (3)Compute the classification losses for D(x) and D(x*), and backpropagate the total error to update θ(D) to minimize the classification loss.
   2. Train the Generator:
-    * Take a mini-batch of random noise vectors z and generate a mini-batch of fake examples: G(z) = x*.
-    * Compute the classification loss for D(x*), and backpropagate the loss to update θ(G) to maximize the classification loss.
+    (1)Take a mini-batch of random noise vectors z and generate a mini-batch of fake examples: G(z) = x*.
+    (2)Compute the classification loss for D(x*), and backpropagate the loss to update θ(G) to maximize the classification loss.
 End for
