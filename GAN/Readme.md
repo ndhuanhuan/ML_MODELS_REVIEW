@@ -28,3 +28,13 @@ Recall that GAN training ends when the two networks reach Nash equilibrium, a po
 Using the confusion matrix terminology, the Discriminator is trying to maximize true positive and true negative.
 
 The Generator is not concerned with how well the Discriminator classifies the real examples; it cares only about the Discriminator’s classifications of the fake data samples.
+
+For each training iteration do
+  1. Train the Discriminator:
+    1. Take a random mini-batch of real examples: x.
+    2. Take a mini-batch of random noise vectors z and generate a mini-batch of fake examples: G(z) = x*.
+    3. Compute the classification losses for D(x) and D(x*), and backpropagate the total error to update θ(D) to minimize the classification loss.
+  2. Train the Generator:
+    1. Take a mini-batch of random noise vectors z and generate a mini-batch of fake examples: G(z) = x*.
+    2. Compute the classification loss for D(x*), and backpropagate the loss to update θ(G) to maximize the classification loss.
+End for
