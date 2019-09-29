@@ -8,6 +8,8 @@
 
 -- Normalization has several advantages. Perhaps most important, it makes comparisons between features with vastly different scales easier and, by extension, makes the training process less sensitive to the scale of the features.
 
+-- Batch normalization is a method that reduces the covariate shift (variations in input value distributions between layers during training) in neural networks by normalizing the output of each layer before it is passed as input to the next layer.
+
 ## DCGAN architecture
 - DCGAN generator
 
