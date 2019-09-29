@@ -16,5 +16,7 @@ https://stackoverflow.com/questions/43237124/role-of-flatten-in-keras
 
 # Numpy
 ## get random samples from mnist
+```
 idx = np.random.randint(0, X_train.shape[0], batch_size)
 imgs = X_train[idx]
+```
