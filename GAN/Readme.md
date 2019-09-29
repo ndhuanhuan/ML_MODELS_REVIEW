@@ -38,3 +38,11 @@ For each training iteration do
     (1)Take a mini-batch of random noise vectors z and generate a mini-batch of fake examples: G(z) = x*.
     (2)Compute the classification loss for D(x*), and backpropagate the loss to update θ(G) to maximize the classification loss.
 End for
+
+```
+GANs consist of two networks: the Generator (G) and the Discriminator (D), each with its own loss function: J(G)(θ(G), θ(D)) and J(D)(θ(G), θ(D)), respectively.
+
+During training, the Generator and the Discriminator can tune only their own parameters: θ(G) and θ(D), respectively.
+
+The two GAN networks are trained simultaneously via a game-like dynamic. The Generator seeks to maximize the Discriminator’s false-positive classifications (classifying a generated image as real), while the Discriminator seeks to minimize its false-positive and false-negative classifications
+```
