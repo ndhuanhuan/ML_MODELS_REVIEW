@@ -52,3 +52,9 @@ The two GAN networks are trained simultaneously via a game-like dynamic. The Gen
 - All of these generative models ultimately derive from Maximum Likelihood, at least implicitly
 - The variational autoencoder introducedsits in the Explicit part of the tree. Remember that we had a clear loss function (the reconstruction loss)? Well, with GANs we do not have it anymore. Rather, we now have two competing loss functions that we will cover in lot more depth later. But as such, the system does not have a single analytical solution.
 
+### Evaluation
+Two most commonly used and accepted metrics for statistically evaluating the quality of the generated samples: the inception score (IS) and Fréchet inception distance (FID).
+
+The advantage of those two metrics is that they have been extensively validated to be highly correlated with at least some desirable property such as visual appeal or realism of the image. The inception score was designed solely around the idea that the samples should be recognizable, but it has also been shown to correlate with human intuition about what constitutes a real image.
+
+
