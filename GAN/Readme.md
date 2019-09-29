@@ -46,3 +46,9 @@ During training, the Generator and the Discriminator can tune only their own par
 
 The two GAN networks are trained simultaneously via a game-like dynamic. The Generator seeks to maximize the Discriminator’s false-positive classifications (classifying a generated image as real), while the Discriminator seeks to minimize its false-positive and false-negative classifications
 ```
+
+## Training and common challenges: GANing for success
+
+- All of these generative models ultimately derive from Maximum Likelihood, at least implicitly
+- The variational autoencoder introducedsits in the Explicit part of the tree. Remember that we had a clear loss function (the reconstruction loss)? Well, with GANs we do not have it anymore. Rather, we now have two competing loss functions that we will cover in lot more depth later. But as such, the system does not have a single analytical solution.
+
