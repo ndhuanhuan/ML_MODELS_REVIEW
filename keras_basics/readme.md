@@ -13,3 +13,8 @@ https://datascience.stackexchange.com/questions/44124/when-to-use-dense-conv1-2d
 ### Flatten operation between Dense layers, Role of “Flatten” in Keras
 https://stackoverflow.com/questions/49330519/flatten-operation-between-dense-layers
 https://stackoverflow.com/questions/43237124/role-of-flatten-in-keras
+
+# Numpy
+## get random samples from mnist
+idx = np.random.randint(0, X_train.shape[0], batch_size)
+imgs = X_train[idx]
