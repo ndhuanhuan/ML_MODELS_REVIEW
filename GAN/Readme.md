@@ -115,3 +115,10 @@ NS-GAN
 In the NS-GAN’s defense, it should be said that it is still much faster than the Wasserstein GAN.
 
 ### Wasserstein GAN
+The WGAN is important for three reasons:
+- It significantly improves on the loss functions, which are now interpretable and provide clearer stopping criteria.
+- Empirically, the WGAN tends to have better results.
+- Unlike a lot of research into GANs, it has clear theoretical backing that starts from the loss and shows how the KL divergence that we are trying to approximate is ultimately not well justified theoretically or practically. Based on this theory, it then proposes a better loss function that mitigates this problem.
+
+For first point, the WGAN uses the earth mover’s distance as a loss function that clearly correlates with the visual quality of the samples generated.
+The benefits of the second and third points are somewhat obvious—we want to have higher-quality samples and better theoretical grounding.
