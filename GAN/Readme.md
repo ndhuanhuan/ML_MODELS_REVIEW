@@ -70,7 +70,7 @@ Technical implementation of the FID is again complex, but the high-level idea is
 
 The FID is calculated by running images through an Inception network. In practice, we compare the intermediate representations—feature maps or layers—rather than the final output (in other words, we embed them). More concretely, we evaluate the distance of the embedded means, the variances, and the covariances of the two distributions—the real and the generated one.
 
-## Training GAN
+## Training GAN - Chanllenges
 
 ### Mode collapse
 In mode collapse, some of the modes (for example, classes) are not well represented in the generated samples. The mode collapses even though the real data distribution has support for the samples in this part of the distribution; for example, there will be no number 8 in the MNIST dataset. Note that mode collapse can happen even if the network has converged. We talked about interclass mode collapse during the explanation of the IS and intraclass mode collapse when discussing the FID.
@@ -78,3 +78,16 @@ In mode collapse, some of the modes (for example, classes) are not well represen
 ### Slow convergence
 ### Overgeneralization
 Here, we talk especially about cases in which modes (potential data samples) that should not have support (should not exist), do. For example, you might see a cow with multiple bodies but only one head, or vice versa. This happens when the GAN overgeneralizes and learns things that should not exist based on the real data.
+
+## How to resolve training challenges
+- Adding network depth
+- Changing the game setup
+1. Min-Max design and stopping criteria that were proposed by the original paper
+2. Non-Saturating design and stopping criteria that were proposed by the original paper
+3. Wasserstein GAN as a recent improvement
+- Number of training hacks with commentary
+1. Normalizing the inputs
+2. Penalizing the gradients
+3. Training the Discriminator more
+4. Avoiding sparse gradients
+5. Changing to soft and noisy labels
