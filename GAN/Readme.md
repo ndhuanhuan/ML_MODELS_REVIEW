@@ -122,3 +122,17 @@ The WGAN is important for three reasons:
 
 For first point, the WGAN uses the earth mover’s distance as a loss function that clearly correlates with the visual quality of the samples generated.
 The benefits of the second and third points are somewhat obvious—we want to have higher-quality samples and better theoretical grounding.
+
+On a high level, in this equation we are trying to minimize the distance between the expectation of the real distribution and the expectation of the generated distribution. The paper that introduced the WGAN itself is complex, but the gist is that fw is a function satisfying a technical constraint.
+The technical constraint that fw satisfies is 1 – Lipschitz: for all x1, x2: | f(x1) – f(x2) | ≤ | x1 – x2 |.
+
+The problem that the Generator is trying to solve is similar to the one before, but let’s go into more detail anyway:
+
+1. We draw x from either the real distribution (x ~ Pr) or the generated distribution x* (gθ(z), where z ~ p(z)).
+2. The generated samples are sampled from z (the latent space) and then transformed via gθ to get the samples (x*) in the same space and then evaluated using fw.
+3. We are trying to minimize our loss function—or distance function, in this case—the earth mover’s distance. The actual numbers are calculated using the earth mover’s distance.
+
+The WGAN has two practical implications:
+
+1. We now have clearer stopping criteria because this GAN has been validated by later papers that show a correlation between the Discriminator loss and the perceptual quality. We can simply measure the Wasserstein distance, and that helps inform when to stop.
+2/ We can now train the WGAN to convergence. This is relevant because meta-review papers[15] showed that using the JS loss and the divergence between the Generator in the real distribution as a measure of training progress can often be meaningless.[16] To translate that into human terms, sometimes in chess, you need to lose a couple of rounds and therefore temporarily do worse in order to learn in a couple of iterations and ultimately do better.
