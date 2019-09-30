@@ -60,3 +60,13 @@ The advantage of those two metrics is that they have been extensively validated 
 #### Evaluation - Inception score
 1. We take the Kullback–Leibler (KL) divergence between the real and the generated distribution
 2. We exponentiate the result of step 1.
+
+### Evaluation - Fréchet inception distance
+In 2017, a new solution was proposed: the Fréchet inception distance (FID). The FID improves on the IS by making it more robust to noise and allowing the detection of intraclass (within class) sample omissions.
+
+This is important, because if we accept the IS baseline, then producing only one type of a category technically satisfies the category-being-generated-sometimes requirement. But, for example, if we are trying to create a cat-generation algorithm, this is not actually what we want (say, if we had multiple breeds of cats represented). Furthermore, we want the GAN to output samples that present a cat from more than one angle and, generally, images that are distinct.
+
+Technical implementation of the FID is again complex, but the high-level idea is that we are looking for a generated distribution of samples that minimizes the number of modifications we have to make to ensure that the generated distribution looks like the distribution of the true data.
+
+
+
