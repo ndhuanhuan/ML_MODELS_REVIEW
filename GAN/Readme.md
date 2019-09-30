@@ -145,3 +145,9 @@ Three core versions of the GAN setup: min-max, non-saturating, and Wasserstein.
 One of these versions will be mentioned at the beginning of every paper, and now you’ll have at least an idea of whether the paper is using the original formulation, which is more explainable but doesn’t work as well in practice; or the non-saturating version, which loses a lot of the mathematical guarantees but works much better; or the newer Wasserstein version, which has both theoretical grounding and largely superior performance.
 http://mng.bz/Xgv6
 
+Training hacks that allow us to train faster include the following:
+- Normalizing inputs, which is standard in machine learning
+- Using gradient penalties that give us more stability in training
+- Helping to warm-start the Discriminator to ultimately give us a good Generator, because doing so sets a higher bar for the generated samples
+- Avoiding sparse gradients, because they lose too much information
+- Playing around with soft and noisy labels rather than the typical binary classification
