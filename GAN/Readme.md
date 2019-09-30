@@ -102,3 +102,10 @@ For those of you who want more detail, KL divergence, as well as JSD, are genera
 Jensen-Shannon divergence (JSD) is a symmetric version of KL divergence. Whereas KL(p,q)! = KL(q,p), it is the case that JSD(p,q) == JSD(q,p).
 
 ### Non-Saturating GAN
+In this version of the problem, rather than trying to put the two loss functions as direct competitors of each other, we make the two loss functions independent, but directionally consistent with the original formulation.
+
+Again, let’s focus on a general understanding: the two loss functions are no longer set directly against each other. But in equation  you can see that the Generator is trying to minimize the opposite of the second term of the Discriminator. Basically, it is trying not to get caught for the samples that it generates.
+
+The main reason for the NS-GAN is that in the MM-GAN’s case, the gradients can easily saturate—get close to 0, which leads to slow convergence, because the weight updates that are backpropagated are either 0 or tiny
+
+### When to stop training
