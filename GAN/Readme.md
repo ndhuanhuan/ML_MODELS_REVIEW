@@ -139,3 +139,9 @@ The WGAN has two practical implications:
 
 earth mover’s distance == Wasserstein distance
 In the end, all you need to know is that the earth mover’s distance has nicer properties than either the JS or KL, and there are already important contributions building on the WGAN as well as validating its generally superior performance.
+
+## Summary of Game Setups
+Three core versions of the GAN setup: min-max, non-saturating, and Wasserstein.
+One of these versions will be mentioned at the beginning of every paper, and now you’ll have at least an idea of whether the paper is using the original formulation, which is more explainable but doesn’t work as well in practice; or the non-saturating version, which loses a lot of the mathematical guarantees but works much better; or the newer Wasserstein version, which has both theoretical grounding and largely superior performance.
+http://mng.bz/Xgv6
+
