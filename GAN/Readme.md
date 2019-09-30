@@ -108,4 +108,10 @@ Again, let’s focus on a general understanding: the two loss functions are no l
 
 The main reason for the NS-GAN is that in the MM-GAN’s case, the gradients can easily saturate—get close to 0, which leads to slow convergence, because the weight updates that are backpropagated are either 0 or tiny
 
-### When to stop training
+#### When to stop training
+NS-GAN
+- Is no longer asymptotically consistent with the JSD
+- Has an equilibrium state that theoretically is even more elusive
+In the NS-GAN’s defense, it should be said that it is still much faster than the Wasserstein GAN.
+
+### Wasserstein GAN
