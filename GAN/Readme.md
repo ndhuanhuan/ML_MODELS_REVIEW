@@ -91,3 +91,14 @@ Here, we talk especially about cases in which modes (potential data samples) tha
 3. Training the Discriminator more
 4. Avoiding sparse gradients
 5. Changing to soft and noisy labels
+
+### Adding network depth
+See “Progressive Growing of GANs for Improved Quality, Stability, and Variation,” by Tero Karras et al., 2017, http://arxiv.org/abs/1710.10196.
+
+### Min-Max GAN
+We have two loss functions, and one is the negative value of the other.
+For those of you who want more detail, KL divergence, as well as JSD, are generally regarded as what GANs are ultimately trying to minimize. These are both types of distance metrics that help us understand how different the two distributions are in a high-dimensional space. Some neat proofs connect those divergences and the min-max version of the GAN.
+
+Jensen-Shannon divergence (JSD) is a symmetric version of KL divergence. Whereas KL(p,q)! = KL(q,p), it is the case that JSD(p,q) == JSD(q,p).
+
+### Non-Saturating GAN
