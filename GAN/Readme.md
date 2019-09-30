@@ -135,4 +135,7 @@ The problem that the Generator is trying to solve is similar to the one before, 
 The WGAN has two practical implications:
 
 1. We now have clearer stopping criteria because this GAN has been validated by later papers that show a correlation between the Discriminator loss and the perceptual quality. We can simply measure the Wasserstein distance, and that helps inform when to stop.
-2/ We can now train the WGAN to convergence. This is relevant because meta-review papers[15] showed that using the JS loss and the divergence between the Generator in the real distribution as a measure of training progress can often be meaningless.[16] To translate that into human terms, sometimes in chess, you need to lose a couple of rounds and therefore temporarily do worse in order to learn in a couple of iterations and ultimately do better.
+2. We can now train the WGAN to convergence. This is relevant because meta-review papers[15] showed that using the JS loss and the divergence between the Generator in the real distribution as a measure of training progress can often be meaningless.[16] To translate that into human terms, sometimes in chess, you need to lose a couple of rounds and therefore temporarily do worse in order to learn in a couple of iterations and ultimately do better.
+
+earth mover’s distance == Wasserstein distance
+In the end, all you need to know is that the earth mover’s distance has nicer properties than either the JS or KL, and there are already important contributions building on the WGAN as well as validating its generally superior performance.
