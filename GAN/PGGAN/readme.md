@@ -39,3 +39,5 @@ For each feature map do
 4. Pass that in the original tensor shape to the next layer.
 
 End for
+
+The last thing to note is that this term is applied only to the Generator, as the explosion in the activation magnitudes leads to an arms race only if both networks participate.
