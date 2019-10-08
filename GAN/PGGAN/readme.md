@@ -16,3 +16,25 @@ Moving beyond the intuition, the technical implementation is straightforward as 
 1. [4D -> 3D] We compute the standard deviation across all the images in the batch, across all the remaining channels—height, width, and color. We then get a single image with standard deviations for each pixel and each channel.
 2. [3D -> 2D] We average the standard deviations across all channels—to get a single feature map or matrix of standard deviations for that pixel, but with a collapsed color channel.
 3. [2D -> Scalar/0D] We average the standard deviations for all pixels within the preceding matrix to get a single scalar value.
+
+## Equalized learning rate
+Probably a hack:
+we need to ensure that all the weights (w) are normalized (w’) to be within a certain range such that w’ = w/c by a constant c that is different for each layer, depending on the shape of the weight matrix. This also ensures that if any parameters need to take bigger steps to reach optimum—because they tend to vary more—these relevant parameters can do that.
+
+## Pixel-wise feature normalization in the generator
+Note that most networks are using some form of normalization. Typically, they use either batch normalization or a virtual version of this technique.
+
+Unfortunately, batch normalization is too memory intensive at our resolution. We have to come up with something that allows us to work with a few examples—that fit into our GPU memory with the two network graphs—but still works well. Now we understand where the need for pixel-wise feature normalization comes from and why we use it.
+
+If we jump into the algorithm, pixel normalization takes activation magnitude at each layer just before the input is fed into the next layer.
+
+For each feature map do
+
+1. Take the pixel value of that feature map (fm) at a position (x, y).
+2. Construct a vector for each (x, y), where
+ - v0,0 = [(0,0) value for fm1, (0,0) value for fm2, ...., (0,0) value for fmn]
+ - v0,1 = [(0,1) value for fm1, (0,1) value for fm2, ...., (0,1) value for fmn] ...
+ - vn,n = [(n,n) value for fm1, (n,n) value for fm2, ...., (n,n) value for fmn]
+3. Normalize each vector vi,i as defined in step 2 to have a unit norm; call it ni,i.
+4. Pass that in the original tensor shape to the next layer.
+End for
