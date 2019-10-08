@@ -37,4 +37,5 @@ For each feature map do
  - vn,n = [(n,n) value for fm1, (n,n) value for fm2, ...., (n,n) value for fmn]
 3. Normalize each vector vi,i as defined in step 2 to have a unit norm; call it ni,i.
 4. Pass that in the original tensor shape to the next layer.
+
 End for
