@@ -19,4 +19,5 @@ Recall that in a regular GAN, we train the Discriminator by computing the loss f
 To train the SGAN, in addition to D(x) and D(x*), we also have to compute the loss for the supervised training examples: D((x, y)). These losses correspond to the dual learning objective that the SGAN Discriminator has to grapple with:
 - distinguishing real examples from the fake ones
 - learning to classify real examples to their correct classes
+
 These dual objectives correspond to two kinds of losses: the supervised loss and the unsupervised loss.
