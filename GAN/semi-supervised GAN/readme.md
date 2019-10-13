@@ -12,3 +12,11 @@ For example, the MNIST dataset of handwritten digits has 10 labels (one label fo
 The SGAN Generator’s purpose is the same as in the original GAN: it takes in a vector of random numbers and produces fake examples whose goal is to be indistinguishable from the training dataset.
 
 The SGAN Discriminator, however, diverges considerably from the original GAN implementation. Instead of two, it receives three kinds of inputs: fake examples produced by the Generator (x*), real examples without labels from the training dataset (x), and real examples with labels from the training dataset (x, y), where y denotes the label for the given example x. Instead of binary classification, the SGAN Discriminator’s goal is to correctly categorize the input example into its corresponding class if the example is real, or reject the example as fake (which can be thought of as a special additional class).
+
+## Training process
+Recall that in a regular GAN, we train the Discriminator by computing the loss for D(x) and D(x*) and backpropagating the total loss to update the Discriminator’s trainable parameters to minimize the loss. The Generator is trained by backpropagating the Discriminator’s loss for D(x*), seeking to maximize it, so that the fake examples it synthesizes are misclassified as real.
+
+To train the SGAN, in addition to D(x) and D(x*), we also have to compute the loss for the supervised training examples: D((x, y)). These losses correspond to the dual learning objective that the SGAN Discriminator has to grapple with:
+- distinguishing real examples from the fake ones
+- learning to classify real examples to their correct classes
+These dual objectives correspond to two kinds of losses: the supervised loss and the unsupervised loss.
