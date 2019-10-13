@@ -21,3 +21,6 @@ To train the SGAN, in addition to D(x) and D(x*), we also have to compute the lo
 - learning to classify real examples to their correct classes
 
 These dual objectives correspond to two kinds of losses: the supervised loss and the unsupervised loss.
+
+## Training objective
+In contrast, in a SGAN, we care primarily about the Discriminator. The goal of the training process is to make this network into a semi-supervised classifier whose accuracy is as close as possible to a fully supervised classifier (one that has labels available for each example in the training dataset), while using only a small fraction of the labels. The Generator’s goal is to aid this process by serving as a source of additional information (the fake data it produces) that helps the Generator learn the relevant patterns in the data, enhancing its classification accuracy. At the end of the training, the Generator gets discarded, and we use the trained Discriminator as a classifier.
