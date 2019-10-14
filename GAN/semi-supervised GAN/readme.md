@@ -44,3 +44,8 @@ For each training iteration do
 - Compute D(x*) for the given mini-batch and backpropagate the binary classification loss to update θ(G) to maximize the loss.
 
 End for
+
+## Summary
+- The purpose of a SGAN is to train the Discriminator into a classifier that can achieve superior classification accuracy from as few labeled examples as possible, thereby reducing the dependency of classification tasks on enormous labeled datasets.
+
+
