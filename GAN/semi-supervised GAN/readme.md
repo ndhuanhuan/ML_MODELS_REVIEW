@@ -24,3 +24,23 @@ These dual objectives correspond to two kinds of losses: the supervised loss and
 
 ## Training objective
 In contrast, in a SGAN, we care primarily about the Discriminator. The goal of the training process is to make this network into a semi-supervised classifier whose accuracy is as close as possible to a fully supervised classifier (one that has labels available for each example in the training dataset), while using only a small fraction of the labels. The Generator’s goal is to aid this process by serving as a source of additional information (the fake data it produces) that helps the Generator learn the relevant patterns in the data, enhancing its classification accuracy. At the end of the training, the Generator gets discarded, and we use the trained Discriminator as a classifier.
+
+
+## Training pseudo code
+SGAN training algorithm
+
+For each training iteration do
+
+1. Train the Discriminator (supervised):
+- Take a random mini-batch of labeled real examples (x, y).
+- Compute D((x, y)) for the given mini-batch and backpropagate the multiclass classification loss to update θ(D) to minimize the loss.
+2. Train the Discriminator (unsupervised):
+- Take a random mini-batch of unlabeled real examples x.
+- Compute D(x) for the given mini-batch and backpropagate the binary classification loss to update θ(D) to minimize the loss.
+- Take a mini-batch of random noise vectors z and generate a mini-batch of fake examples: G(z) = x*.
+- Compute D(x*) for the given mini-batch and backpropagate the binary classification loss to update θ(D) to minimize the loss.
+3. Train the Generator:
+- Take a mini-batch of random noise vectors z and generate a mini-batch of fake examples: G(z) = x*.
+- Compute D(x*) for the given mini-batch and backpropagate the binary classification loss to update θ(G) to maximize the loss.
+
+End for
