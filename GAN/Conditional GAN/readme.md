@@ -20,3 +20,9 @@ The Discriminator outputs a single probability indicating its conviction that th
 
 ## Architecture
 Note that the Discriminator is never explicitly trained to reject mismatched pairs by being trained on real examples with mismatching labels; its ability to identify mismatched pairs is a by-product of being trained to accept only real matching pairs.
+
+### Generator
+we use embedding and element-wise multiplication to combine the random noise vector z and the label y into a joint representation.
+1. Take label y (an integer from 0 to 9) and turn it into a dense vector of size z_dim (the length of the random noise vector) by using the Keras Embedding layer.
+2. Combine the label embedding with the noise vector z into a joint representation by using the Keras Multiply layer. As its name suggests, this layer multiplies the corresponding entries of the two equal-length vectors and outputs a single vector of the resulting products.
+3. Feed the resulting vector as input into the rest of the CGAN Generator network to synthesize an image.
