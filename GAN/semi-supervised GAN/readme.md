@@ -47,5 +47,5 @@ End for
 
 ## Summary
 - The purpose of a SGAN is to train the Discriminator into a classifier that can achieve superior classification accuracy from as few labeled examples as possible, thereby reducing the dependency of classification tasks on enormous labeled datasets.
-
+- In our implementation, we used *softmax* and *multiclass cross-entropy loss* for the *supervised* task of assigning real labels, and *sigmoid* and *binary cross-entropy* for the task of distinguishing between real and fake data.
 
