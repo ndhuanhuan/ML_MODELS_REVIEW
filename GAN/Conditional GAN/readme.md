@@ -26,3 +26,10 @@ we use embedding and element-wise multiplication to combine the random noise vec
 1. Take label y (an integer from 0 to 9) and turn it into a dense vector of size z_dim (the length of the random noise vector) by using the Keras Embedding layer.
 2. Combine the label embedding with the noise vector z into a joint representation by using the Keras Multiply layer. As its name suggests, this layer multiplies the corresponding entries of the two equal-length vectors and outputs a single vector of the resulting products.
 3. Feed the resulting vector as input into the rest of the CGAN Generator network to synthesize an image.
+
+### Discriminator
+unlike the Generator, where the model input is a flat vector, the Discriminator receives three-dimensional images. This necessitates customized handling, described in the following steps:
+1. Take a label (an integer from 0 to 9) and—using the Keras Embedding layer—turn the label into a dense vector of size 28 × 28 × 1 = 784 (the length of a flattened image).
+2. Reshape the label embeddings into the image dimensions (28 × 28 × 1).
+3. Concatenate the reshaped label embedding onto the corresponding image, creating a joint representation with the shape (28 × 28 × 2). You can think of it as an image with its embedded label “stamped” on top of it.
+4. Feed the image-label joint representation as input into the CGAN Discriminator network. Note that in order for things to work, we have to adjust the model input dimensions to (28 × 28 × 2) to reflect the new input shape.
