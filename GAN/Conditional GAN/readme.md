@@ -33,3 +33,16 @@ unlike the Generator, where the model input is a flat vector, the Discriminator 
 2. Reshape the label embeddings into the image dimensions (28 × 28 × 1).
 3. Concatenate the reshaped label embedding onto the corresponding image, creating a joint representation with the shape (28 × 28 × 2). You can think of it as an image with its embedded label “stamped” on top of it.
 4. Feed the image-label joint representation as input into the CGAN Discriminator network. Note that in order for things to work, we have to adjust the model input dimensions to (28 × 28 × 2) to reflect the new input shape.
+
+### CGAN training algorithm
+For each training iteration do:
+1. Train the Discriminator:
+- Take a random mini-batch of real examples and their labels (x, y).
+- Compute D((x, y)) for the mini-batch and backpropagate the binary classification loss to update θ(D) to minimize the loss.
+- Take a mini-batch of random noise vectors and class labels (z, y) and generate a mini-batch of fake examples: G(z, y) = x*|y.
+- Compute D(x*|y, y) for the mini-batch and backpropagate the binary classification loss to update θ(D) to minimize the loss.
+2. Train the Generator:
+- Take a mini-batch of random noise vectors and class labels (z, y) and generate a mini-batch of fake examples: G(z, y) = x*|y.
+- Compute D(x*|y, y) for the given mini-batch and backpropagate the binary classification loss to update θ(G) to maximize the loss.
+
+End for
