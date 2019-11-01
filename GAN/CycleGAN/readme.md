@@ -5,3 +5,12 @@
 # Basics
 ## CYCLE-CONSISTENCY LOSS: THERE AND BACK AGAN
 we simply complete the cycle: we translate from one domain to another and then back again. For example, we go from summer picture (domain A) of a park to a winter one (domain B) and then back again to summer (domain A). Now we have essentially created a cycle, and, ideally, the original picture (a) and the reconstructed picture (a^) are the same. If they are not, we can measure their loss on a pixel level, thereby getting the first loss of our CycleGAN: cycle-consistency loss.
+
+A common analogy is thinking about the process of back-translation—a sentence in Chinese that is translated to English and then back again to Chinese should give back the same sentence. If not, we can measure the cycle-consistency loss by how much the first and the third sentences differ.
+
+To be able to use the cycle-consistency loss, we need to have two Generators: one translating from A to B, called GAB, sometimes referred to as simply G, and then another one translating from B to A, called GBA, referred to as F for brevity. There are technically two losses—forward cycle-consistency loss and backward cycle-consistency loss—but because all they mean is that  as well as , you may think of these as essentially the same, but off by one.
+
+## ADVERSARIAL LOSS
+In addition to the cycle-consistency loss, we still have the adversarial loss. Every translation with a Generator GAB has a corresponding Discriminator DB, and GBA has Discriminator DA. The way to think about it is that we are always testing, when translating to domain A, whether the picture looks real; hence we use DA and vice versa.
+
+This is the same idea as with simpler architectures, but now, because of the two losses, we have two Discriminators. We need to make sure that not only the translation from apple to orange looks real, but also that the translation from our estimated orange back to reconstructed apple looks real. Recall that the adversarial loss ensures that the images look real, and as a result, it is still key for the CycleGAN to work. Hence adversarial loss is presented as second. The first Discriminator in the cycle is especially important—otherwise, we’d simply get noise that would help the GAN memorize what it should reconstruct.
