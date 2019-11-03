@@ -36,3 +36,22 @@ Ultimately, this allows the design of the CycleGAN to be fully convolutional, me
 
 ## Instance normalization
 Instance normalization is similar to the batch normalization in chapter 4, except that instead of normalizing based on information from the entire batch, we normalize each feature map within each channel separately. Instance normalization often results in better-quality images for tasks such as style transfer or image-to-image translation—just what we need for the CycleGAN!
+
+## Training CycleGAN
+
+For each training iteration do
+1. Train the Discriminator:
+- Take a mini-batch of random images from each domain (imgsA and imgsB).
+- Use the Generator GAB to translate imgsA to domain B and vice versa with GBA.
+- Compute DA(imgsA, 1) and DA(GBA(imgsB), 0) to get the losses for real images in A and translated images from B, respectively. Then add these two losses together. The 1 and 0 in DA serve as labels.
+- Compute DB(imgsB, 1) and DB(GAB(imgsA), 0) to get the losses for real images in B and translated images from A, respectively. Then add these two losses together. The 1 and 0 in DB serve as labels.
+2. Add the losses from steps c and d together to get a total Discriminator loss. Train the Generator:
+- We use the combined model to
+  - Input the images from domain A (imgsA) and B (imgsB)
+  - The outputs are
+    - Validity of A: DA(GBA(imgsB))
+    - Validity of B: DB(GAB(imgsA))
+    - Reconstructed A: GBA(GAB(imgsA))
+    - Reconstructed B: GAB(GBA(imgsB))
+    - Identity mapping of A: GBA(imgsA))
+    - Identity mapping of B: GAB(imgsB))
