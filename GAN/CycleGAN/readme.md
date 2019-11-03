@@ -55,3 +55,8 @@ For each training iteration do
     - Reconstructed B: GAB(GBA(imgsB))
     - Identity mapping of A: GBA(imgsA))
     - Identity mapping of B: GAB(imgsB))
+  - We then update the parameters of both Generators inline with the cycle-consistency loss, identity loss, and adversarial loss with
+    - Mean squared error (MSE) for the scalars (discriminator probabilities)
+    - Mean absolute error (MAE) for images (either reconstructed or identity-mapped)
+
+End for
