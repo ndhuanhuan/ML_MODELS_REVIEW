@@ -25,3 +25,5 @@ This is done by feeding the images already in domain A to the Generator from B t
 Use U-Net architecture
 - Encoder— Step 1 from figure 9.4: these are the convolutional layers that reduce the resolution of each feature map (layer or slice). This is the contraction path (d0 to d3).
 - Decoder— Step 3 from figure 9.4: these are the deconvolutional layers (transposed convolutions) that upscale the image back to 128 × 128. This is the expansion path (u1 to u4).
+
+To clarify, the autoencoder model here is useful in two ways. First, the overall CycleGAN architecture can be viewed as training two autoencoders. Second, the U-Net itself has parts referred to as encoder and decoder.
