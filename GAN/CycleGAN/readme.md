@@ -19,3 +19,9 @@ This is the same idea as with simpler architectures, but now, because of the two
 The idea of identity loss is simple: we want to enforce that CycleGAN preserves the overall color structure (or temperature) of the picture. So we introduce a regularization term that helps us keep the tint of the picture consistent with the original image. Imagine this as a way of ensuring that even after applying many filters onto your image, you still can recover the original image.
 
 This is done by feeding the images already in domain A to the Generator from B to A (GBA), because the CycleGAN should understand that they are already in the correct domain. In other words, we penalize unnecessary changes to the image: if we feed in a zebra and are trying to “zebrafy” an image, we get the same zebra back, as there is nothing to do.
+
+# Architecture
+## Generator Architecture
+Use U-Net architecture
+- Encoder— Step 1 from figure 9.4: these are the convolutional layers that reduce the resolution of each feature map (layer or slice). This is the contraction path (d0 to d3).
+- Decoder— Step 3 from figure 9.4: these are the deconvolutional layers (transposed convolutions) that upscale the image back to 128 × 128. This is the expansion path (u1 to u4).
