@@ -60,3 +60,12 @@ For each training iteration do
     - Mean absolute error (MAE) for images (either reconstructed or identity-mapped)
 
 End for
+
+# Summaries
+- Image-to-image translation frameworks are frequently difficult to train because of the need for perfect pairs; the CycleGAN solves this by making this an unpaired domain translation.
+- The CycleGAN has three losses:
+  - Cycle-consistent, which measures the difference between the original image and an image translated into a different domain and back again
+  - Adversarial, which ensures realistic images
+  - Identity, which preserves the color space of the image
+ - The two Generators use the U-Net architecture, and the two Discriminators use the PatchGAN-based architecture.
+ - Practical applications of the CycleGAN include self-driving car training and extensions that allow us to create different styles of images during the translation process.
