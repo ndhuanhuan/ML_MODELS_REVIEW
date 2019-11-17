@@ -124,3 +124,12 @@ notnull or isnull:
 ```
 reviews.loc[reviews.price.notnull()]
 ```
+
+## Assigning data
+```
+reviews['critic'] = 'everyone'
+```
+
+```
+reviews['index_backwards'] = range(len(reviews), 0, -1)
+```
