@@ -114,3 +114,13 @@ reviews.loc[(reviews.country == 'Italy') & (reviews.points >= 90)]
 ```
 reviews.loc[(reviews.country == 'Italy') | (reviews.points >= 90)]
 ```
+
+isin is lets you select data whose value "is in" a list of values.:
+```
+reviews.loc[reviews.country.isin(['Italy', 'France'])]
+```
+
+notnull or isnull:
+```
+reviews.loc[reviews.price.notnull()]
+```
