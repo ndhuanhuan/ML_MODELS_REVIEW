@@ -75,3 +75,18 @@ To get a col:
 ```
 reviews.iloc[:, 0]
 ```
+
+ to select the country column from just the first, second, and third row, we would do:
+ ```
+ reviews.iloc[:3, 0]
+ ```
+ 
+ It's also possible to pass a list:
+ ```
+ reviews.iloc[[0, 1, 2], 0]
+ ```
+ 
+ ## label based selection
+ ```
+ reviews.loc[:, ['taster_name', 'taster_twitter_handle', 'points']]
+ ```
