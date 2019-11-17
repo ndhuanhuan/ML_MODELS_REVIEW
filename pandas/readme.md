@@ -60,3 +60,18 @@ wine_reviews.head()
 ```
 animals.to_csv("cows_and_goats.csv")
 ```
+
+## index based selection
+```
+first_description = reviews.description.iloc[0]
+```
+
+To get a row:
+```
+reviews.iloc[0]
+```
+
+To get a col:
+```
+reviews.iloc[:, 0]
+```
