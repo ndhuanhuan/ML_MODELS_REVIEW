@@ -1,6 +1,9 @@
 # Basics
 
 ## Constructors
+There are two core objects in pandas: the DataFrame and the Series.
+
+### DataFrame
 1. 
 ```
 pd.DataFrame({'Bob': ['I liked it.', 'It was awful.'], 
@@ -31,3 +34,18 @@ Looks like:
 |2018 Sales| 41 | 34 |
 
 
+### Series
+1. 
+```
+quantities = ['4 cups', '1 cup', '2 large', '1 can']
+items = ['Flour', 'Milk', 'Eggs', 'Spam']
+ingredients = pd.Series(quantities, index=items, name='Dinner')
+```
+Looks like
+```
+Flour     4 cups
+Milk       1 cup
+Eggs     2 large
+Spam       1 can
+Name: Dinner, dtype: object
+```
