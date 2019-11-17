@@ -90,3 +90,27 @@ reviews.iloc[:, 0]
  ```
  reviews.loc[:, ['taster_name', 'taster_twitter_handle', 'points']]
  ```
+
+## Manipulating the index
+```
+reviews.set_index("title")
+```
+
+## Conditional selection
+```
+reviews.country == 'Italy'
+```
+
+or
+
+```
+reviews.loc[reviews.country == 'Italy']
+```
+
+```
+reviews.loc[(reviews.country == 'Italy') & (reviews.points >= 90)]
+```
+
+```
+reviews.loc[(reviews.country == 'Italy') | (reviews.points >= 90)]
+```
