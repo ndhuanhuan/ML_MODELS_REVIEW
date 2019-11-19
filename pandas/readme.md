@@ -133,3 +133,14 @@ reviews['critic'] = 'everyone'
 ```
 reviews['index_backwards'] = range(len(reviews), 0, -1)
 ```
+
+Create a variable `df` containing the `country`, `province`, `region_1`, and `region_2` columns of the records with the index labels `0`, `1`, `10`, and `100`.
+```
+cols = ['country', 'province', 'region_1', 'region_2']
+indices = [0, 1, 10, 100]
+df = reviews.loc[indices, cols]
+```
+
+`iloc` uses the Python stdlib indexing scheme, where the first element of the range is included and the last one excluded. 
+`loc`, meanwhile, indexes inclusively. 
+
