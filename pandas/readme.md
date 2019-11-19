@@ -144,3 +144,7 @@ df = reviews.loc[indices, cols]
 `iloc` uses the Python stdlib indexing scheme, where the first element of the range is included and the last one excluded. 
 `loc`, meanwhile, indexes inclusively. 
 
+## Summary functions
+```reviews.points.describe()```
+```reviews.points.mean()```
+```reviews.taster_name.unique()```
