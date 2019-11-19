@@ -148,3 +148,4 @@ df = reviews.loc[indices, cols]
 ```reviews.points.describe()```
 ```reviews.points.mean()```
 ```reviews.taster_name.unique()```
+```reviews.taster_name.value_counts()```
