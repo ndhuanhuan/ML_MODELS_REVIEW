@@ -149,3 +149,22 @@ df = reviews.loc[indices, cols]
 ```reviews.points.mean()```
 ```reviews.taster_name.unique()```
 ```reviews.taster_name.value_counts()```
+
+## map() apply()
+```
+review_points_mean = reviews.points.mean()
+reviews.points.map(lambda p: p - review_points_mean)
+```
+
+```
+def remean_points(row):
+    row.points = row.points - review_points_mean
+    return row
+
+reviews.apply(remean_points, axis='columns')
+```
+
+```
+bargain_idx = (reviews.points / reviews.price).idxmax()
+bargain_wine = reviews.loc[bargain_idx, 'title']
+```
