@@ -168,3 +168,35 @@ reviews.apply(remean_points, axis='columns')
 bargain_idx = (reviews.points / reviews.price).idxmax()
 bargain_wine = reviews.loc[bargain_idx, 'title']
 ```
+
+## Groupwise analysis
+```
+>>> df = pd.DataFrame({'Animal': ['Falcon', 'Falcon',
+...                               'Parrot', 'Parrot'],
+...                    'Max Speed': [380., 370., 24., 26.]})
+>>> df
+   Animal  Max Speed
+0  Falcon      380.0
+1  Falcon      370.0
+2  Parrot       24.0
+3  Parrot       26.0
+>>> df.groupby(['Animal']).mean()
+        Max Speed
+Animal
+Falcon      375.0
+Parrot       25.0
+```
+
+```
+reviews.groupby('winery').apply(lambda df: df.title.iloc[0])
+```
+
+For even more fine-grained control, you can also group by more than one column.:
+```
+reviews.groupby(['country', 'province']).apply(lambda df: df.loc[df.points.idxmax()])
+```
+
+Another groupby() method worth mentioning is agg(), which lets you run a bunch of different functions on your DataFrame simultaneously:
+```
+reviews.groupby(['country']).price.agg([len, min, max])
+```
