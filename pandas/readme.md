@@ -200,3 +200,15 @@ Another groupby() method worth mentioning is agg(), which lets you run a bunch o
 ```
 reviews.groupby(['country']).price.agg([len, min, max])
 ```
+
+## Multi-indexes
+```
+countries_reviewed = reviews.groupby(['country', 'province']).description.agg([len])
+```
+
+select from multiindexes: https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html
+
+However, in general the multi-index method you will use most often is the one for converting back to a regular index, the reset_index() method:
+```
+countries_reviewed.reset_index()
+```
