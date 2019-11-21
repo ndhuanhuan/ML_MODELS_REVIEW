@@ -212,3 +212,22 @@ However, in general the multi-index method you will use most often is the one fo
 ```
 countries_reviewed.reset_index()
 ```
+
+## Sorting
+```
+countries_reviewed = countries_reviewed.reset_index()
+countries_reviewed.sort_values(by='len')
+```
+
+```
+countries_reviewed.sort_values(by='len', ascending=False)
+```
+
+```
+countries_reviewed.sort_index()
+```
+
+```
+countries_reviewed.sort_values(by=['country', 'len'])
+```
+
