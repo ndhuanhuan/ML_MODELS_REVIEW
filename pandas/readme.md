@@ -231,3 +231,16 @@ countries_reviewed.sort_index()
 countries_reviewed.sort_values(by=['country', 'len'])
 ```
 
+## Dtypes
+```
+reviews.price.dtype
+```
+
+```
+reviews.dtypes
+```
+
+ transform the points column from its existing int64 data type into a float64 data type:
+ ```
+ reviews.points.astype('float64')
+ ```
