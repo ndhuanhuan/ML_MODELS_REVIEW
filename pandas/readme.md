@@ -273,6 +273,12 @@ Both the row index and the column index can have their own name attribute. The c
 reviews.rename_axis("wines", axis='rows').rename_axis("fields", axis='columns')
 ```
 
+Rename multiple columns:
+```
+renamed = reviews.rename(columns=dict(region_1='region', region_2='locale'))
+renamed = reviews.rename(columns={'region_1':'region', 'region_2':'locale'}, inplace=False)
+```
+
 ## Combining
 ```
 canadian_youtube = pd.read_csv("../input/youtube-new/CAvideos.csv")
