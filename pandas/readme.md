@@ -257,3 +257,12 @@ reviews.region_2.fillna("Unknown")
 ```
 reviews.taster_twitter_handle.replace("@kerinokeefe", "@kerino")
 ```
+
+## Renaming
+```
+reviews.rename(columns={'points': 'score'})
+```
+
+```
+reviews.rename(index={0: 'firstEntry', 1: 'secondEntry'})
+```
