@@ -244,3 +244,16 @@ reviews.dtypes
  ```
  reviews.points.astype('float64')
  ```
+
+## Missing value
+```
+reviews[pd.isnull(reviews.country)]
+```
+
+```
+reviews.region_2.fillna("Unknown")
+```
+
+```
+reviews.taster_twitter_handle.replace("@kerinokeefe", "@kerino")
+```
