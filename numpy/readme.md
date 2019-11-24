@@ -53,3 +53,19 @@ print(x2[0, :])  # first row of x2
 ### Subarrays as no-copy views
 One important–and extremely useful–thing to know about array slices is that they return views rather than copies of the array data.
 This default behavior is actually quite useful: it means that when we work with large datasets, we can access and process pieces of these datasets without the need to copy the underlying data buffer.
+
+### Creating copies of arrays
+Despite the nice features of array views, it is sometimes useful to instead explicitly copy the data within an array or a subarray. This can be most easily done with the copy() method:
+```
+x2_sub_copy = x2[:2, :2].copy()
+```
+
+### Reshaping of Arrays
+```
+grid = np.arange(1, 10).reshape((3, 3))
+print(grid)
+
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+ ```
