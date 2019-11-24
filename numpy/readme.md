@@ -43,3 +43,13 @@ Keep in mind that, unlike Python lists, NumPy arrays have a fixed type. This mea
   x2[:3, ::2]  # all rows, every other column
   ```
  
+### Accessing array rows and columns
+One commonly needed routine is accessing of single rows or columns of an array. This can be done by combining indexing and slicing, using an empty slice marked by a single colon (:):
+```
+print(x2[:, 0])  # first column of x2
+print(x2[0, :])  # first row of x2
+```
+
+### Subarrays as no-copy views
+One important–and extremely useful–thing to know about array slices is that they return views rather than copies of the array data.
+This default behavior is actually quite useful: it means that when we work with large datasets, we can access and process pieces of these datasets without the need to copy the underlying data buffer.
