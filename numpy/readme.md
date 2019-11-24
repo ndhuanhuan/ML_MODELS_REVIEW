@@ -98,3 +98,21 @@ array([[1],
        [2],
        [3]])
 ```
+
+### Array Concatenation and Splitting
+#### Concatenation of arrays
+```
+x = np.array([1, 2, 3])
+y = np.array([3, 2, 1])
+np.concatenate([x, y])
+array([1, 2, 3, 3, 2, 1])
+
+grid = np.array([[1, 2, 3],
+                 [4, 5, 6]])
+# concatenate along the first axis
+np.concatenate([grid, grid])
+array([[1, 2, 3],
+       [4, 5, 6],
+       [1, 2, 3],
+       [4, 5, 6]])
+```
