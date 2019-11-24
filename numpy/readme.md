@@ -69,3 +69,32 @@ print(grid)
  [4 5 6]
  [7 8 9]]
  ```
+
+Another common reshaping pattern is the conversion of a one-dimensional array into a two-dimensional row or column matrix.
+```
+x = np.array([1, 2, 3])
+
+# row vector via reshape
+x.reshape((1, 3))
+
+array([[1, 2, 3]])
+```
+
+```
+# row vector via newaxis
+x[np.newaxis, :]
+
+array([[1, 2, 3]])
+```
+
+```
+# column vector via reshape
+x.reshape((3, 1))
+
+# column vector via newaxis
+x[:, np.newaxis]
+
+array([[1],
+       [2],
+       [3]])
+```
