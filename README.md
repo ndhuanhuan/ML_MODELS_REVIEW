@@ -40,6 +40,6 @@ https://towardsdatascience.com/activation-functions-and-its-types-which-is-bette
 
 # Learning Resources
 ## Running on Colab
-https://github.com/firmai/awesome-google-colab
-https://github.com/tugstugi/dl-colab-notebooks
-https://github.com/muellerzr/Practical-Deep-Learning-for-Coders-2.0
+- https://github.com/firmai/awesome-google-colab
+- https://github.com/tugstugi/dl-colab-notebooks
+- https://github.com/muellerzr/Practical-Deep-Learning-for-Coders-2.0
