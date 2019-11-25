@@ -276,3 +276,14 @@ print("log(1 + x) =", np.log1p(x))
 exp(x) - 1 = [ 0.          0.0010005   0.01005017  0.10517092]
 log(1 + x) = [ 0.          0.0009995   0.00995033  0.09531018]
 ```
+
+#### Specifying output
+For large calculations, it is sometimes useful to be able to specify the array where the result of the calculation will be stored. Rather than creating a temporary array, this can be used to write computation results directly to the memory location where you'd like them to be. For all ufuncs, this can be done using the out argument of the function:
+```
+x = np.arange(5)
+y = np.empty(5)
+np.multiply(x, 10, out=y)
+print(y)
+
+[  0.  10.  20.  30.  40.]
+```
