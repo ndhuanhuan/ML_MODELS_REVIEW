@@ -214,3 +214,31 @@ Operator	Equivalent ufunc	Description
 %	np.mod	Modulus/remainder (e.g., 9 % 4 = 1)
 
  ```
+
+#### Absolute value
+```
+np.abs(x)
+array([2, 1, 0, 1, 2])
+```
+This ufunc can also handle complex data, in which the absolute value returns the magnitude:
+```
+x = np.array([3 - 4j, 4 - 3j, 2 + 0j, 0 + 1j])
+np.abs(x)
+array([ 5.,  5.,  2.,  1.])
+```
+
+#### Trigonometric functions
+```
+theta = np.linspace(0, np.pi, 3)
+print("theta      = ", theta)
+print("sin(theta) = ", np.sin(theta))
+print("cos(theta) = ", np.cos(theta))
+print("tan(theta) = ", np.tan(theta))
+
+x = [-1, 0, 1]
+print("x         = ", x)
+print("arcsin(x) = ", np.arcsin(x))
+print("arccos(x) = ", np.arccos(x))
+print("arctan(x) = ", np.arctan(x))
+
+```
