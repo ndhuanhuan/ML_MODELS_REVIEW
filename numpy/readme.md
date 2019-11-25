@@ -175,4 +175,42 @@ array([[ 0,  1,  2,  3],
  [14 15]]
  ```
 
+## Computation on NumPy Arrays: Universal Functions
+### Introducing UFuncs
+Vectorized operations in NumPy are implemented via ufuncs, whose main purpose is to quickly execute repeated operations on values in NumPy arrays. Ufuncs are extremely flexible 
+```
+x = np.arange(9).reshape((3, 3))
+2 ** x
+array([[  1,   2,   4],
+       [  8,  16,  32],
+       [ 64, 128, 256]])
+ ```
+ 
+ ### Exploring NumPy's UFuncs
+ Ufuncs exist in two flavors: unary ufuncs, which operate on a single input, and binary ufuncs, which operate on two inputs.
+ 
+ #### Array arithmetic
+ ```
+ x = np.arange(4)
+ x     = [0 1 2 3]
+ x + 5 = [5 6 7 8]
+ x - 5 = [-5 -4 -3 -2]
+ x * 2 = [0 2 4 6]
+ x / 2 = [ 0.   0.5  1.   1.5]
+ x // 2 = [0 0 1 1]
+ -x     =  [ 0 -1 -2 -3]
+ x ** 2 =  [0 1 4 9]
+ x % 2  =  [0 1 0 1]
+ 
+ 
+Operator	Equivalent ufunc	Description
++	np.add	Addition (e.g., 1 + 1 = 2)
+-	np.subtract	Subtraction (e.g., 3 - 2 = 1)
+-	np.negative	Unary negation (e.g., -2)
+*	np.multiply	Multiplication (e.g., 2 * 3 = 6)
+/	np.divide	Division (e.g., 3 / 2 = 1.5)
+//	np.floor_divide	Floor division (e.g., 3 // 2 = 1)
+**	np.power	Exponentiation (e.g., 2 ** 3 = 8)
+%	np.mod	Modulus/remainder (e.g., 9 % 4 = 1)
 
+ ```
