@@ -242,3 +242,37 @@ print("arccos(x) = ", np.arccos(x))
 print("arctan(x) = ", np.arctan(x))
 
 ```
+
+#### Exponents and logarithms
+```
+x = [1, 2, 3]
+print("x     =", x)
+print("e^x   =", np.exp(x))
+print("2^x   =", np.exp2(x))
+print("3^x   =", np.power(3, x))
+
+x     = [1, 2, 3]
+e^x   = [  2.71828183   7.3890561   20.08553692]
+2^x   = [ 2.  4.  8.]
+3^x   = [ 3  9 27]
+```
+
+```
+x = [1, 2, 4, 10]
+print("x        =", x)
+print("ln(x)    =", np.log(x))
+print("log2(x)  =", np.log2(x))
+print("log10(x) =", np.log10(x))
+
+x        = [1, 2, 4, 10]
+ln(x)    = [ 0.          0.69314718  1.38629436  2.30258509]
+log2(x)  = [ 0.          1.          2.          3.32192809]
+log10(x) = [ 0.          0.30103     0.60205999  1.        ]
+
+x = [0, 0.001, 0.01, 0.1]
+print("exp(x) - 1 =", np.expm1(x))
+print("log(1 + x) =", np.log1p(x))
+
+exp(x) - 1 = [ 0.          0.0010005   0.01005017  0.10517092]
+log(1 + x) = [ 0.          0.0009995   0.00995033  0.09531018]
+```
