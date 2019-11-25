@@ -143,3 +143,36 @@ np.hstack([grid, y])
 array([[ 9,  8,  7, 99],
        [ 6,  5,  4, 99]])
 ```
+
+### Splitting of arrays
+Notice that N split-points, leads to N + 1 subarrays.
+```
+x = [1, 2, 3, 99, 99, 3, 2, 1]
+x1, x2, x3 = np.split(x, [3, 5])
+print(x1, x2, x3)
+[1 2 3] [99 99] [3 2 1]
+```
+
+```
+grid = np.arange(16).reshape((4, 4))
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15]])
+ upper, lower = np.vsplit(grid, [2])
+ [[0 1 2 3]
+ [4 5 6 7]]
+[[ 8  9 10 11]
+ [12 13 14 15]]
+ left, right = np.hsplit(grid, [2])
+ [[ 0  1]
+ [ 4  5]
+ [ 8  9]
+ [12 13]]
+[[ 2  3]
+ [ 6  7]
+ [10 11]
+ [14 15]]
+ ```
+
+
