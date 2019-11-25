@@ -115,4 +115,31 @@ array([[1, 2, 3],
        [4, 5, 6],
        [1, 2, 3],
        [4, 5, 6]])
+
+# concatenate along the second axis (zero-indexed)
+np.concatenate([grid, grid], axis=1)
+array([[1, 2, 3, 1, 2, 3],
+       [4, 5, 6, 4, 5, 6]])
+```
+
+For working with arrays of mixed dimensions, it can be clearer to use the np.vstack (vertical stack) and np.hstack (horizontal stack) functions:
+
+```
+x = np.array([1, 2, 3])
+grid = np.array([[9, 8, 7],
+                 [6, 5, 4]])
+
+# vertically stack the arrays
+np.vstack([x, grid])
+
+array([[1, 2, 3],
+       [9, 8, 7],
+       [6, 5, 4]])
+       
+y = np.array([[99],
+              [99]])
+np.hstack([grid, y])
+
+array([[ 9,  8,  7, 99],
+       [ 6,  5,  4, 99]])
 ```
