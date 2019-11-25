@@ -37,3 +37,9 @@ https://datawhalechina.github.io/leeml-notes/#/
 # Q & A
 ## Activation functions
 https://towardsdatascience.com/activation-functions-and-its-types-which-is-better-a9a5310cc8f
+
+# Learning Resources
+## Running on Colab
+https://github.com/firmai/awesome-google-colab
+https://github.com/tugstugi/dl-colab-notebooks
+https://github.com/muellerzr/Practical-Deep-Learning-for-Coders-2.0
