@@ -295,3 +295,12 @@ np.add.reduce(x)
 15
 ```
 
+```
+np.multiply.reduce(x)
+120
+```
+
+```
+np.add.accumulate(x)
+array([ 1,  3,  6, 10, 15])
+```
