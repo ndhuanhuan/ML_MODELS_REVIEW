@@ -304,3 +304,14 @@ np.multiply.reduce(x)
 np.add.accumulate(x)
 array([ 1,  3,  6, 10, 15])
 ```
+
+#### Outer products
+```
+x = np.arange(1, 6)
+np.multiply.outer(x, x)
+array([[ 1,  2,  3,  4,  5],
+       [ 2,  4,  6,  8, 10],
+       [ 3,  6,  9, 12, 15],
+       [ 4,  8, 12, 16, 20],
+       [ 5, 10, 15, 20, 25]])
+ ```
