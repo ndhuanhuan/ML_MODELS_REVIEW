@@ -287,3 +287,11 @@ print(y)
 
 [  0.  10.  20.  30.  40.]
 ```
+
+#### Aggregates
+```
+x = np.arange(1, 6)
+np.add.reduce(x)
+15
+```
+
