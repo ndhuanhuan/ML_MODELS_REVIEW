@@ -107,3 +107,10 @@ It is often convenient to combine precision and recall into a single metric call
 >>> from sklearn.metrics import f1_score
 >>> f1_score(y_train_5, y_train_pred)
 ```
+
+## ROC Curve
+```
+from sklearn.metrics import roc_curve
+
+fpr, tpr, thresholds = roc_curve(y_train_5, y_scores)
+```
