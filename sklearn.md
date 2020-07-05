@@ -92,3 +92,18 @@ A much better way to evaluate the performance of a classifier is to look at the 
 >>> from sklearn.metrics import confusion_matrix
 >>> confusion_matrix(y_train_5, y_train_pred)
 ```
+
+## Precision and Recall
+```
+>>> from sklearn.metrics import precision_score, recall_score
+>>> precision_score(y_train_5, y_train_pred) # == 4096 / (4096 + 1522)
+0.7290850836596654
+>>> recall_score(y_train_5, y_train_pred) # == 4096 / (4096 + 1325)
+0.7555801512636044
+```
+
+It is often convenient to combine precision and recall into a single metric called the F1 score, in particular if you need a simple way to compare two classifiers.
+```
+>>> from sklearn.metrics import f1_score
+>>> f1_score(y_train_5, y_train_pred)
+```
