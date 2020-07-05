@@ -31,3 +31,11 @@ housing_num = housing.drop("ocean_proximity", axis=1)
 
 imputer.fit(housing_num)
 ```
+
+# Handling Text and Categorical Attributes
+```
+>>> from sklearn.preprocessing import OrdinalEncoder
+>>> ordinal_encoder = OrdinalEncoder()
+>>> housing_cat_encoded = ordinal_encoder.fit_transform(housing_cat)
+>>> housing_cat_encoded[:10]
+```
