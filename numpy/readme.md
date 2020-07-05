@@ -315,3 +315,19 @@ array([[ 1,  2,  3,  4,  5],
        [ 4,  8, 12, 16, 20],
        [ 5, 10, 15, 20, 25]])
  ```
+
+
+# General Notes
+
+#### numpy.c_ (c underscore)
+https://stackoverflow.com/questions/10894323/what-does-the-c-underscore-expression-c-do-exactly
+```
+oecd_bli = pd.read_csv(datapath + "oecd_bli_2015.csv", thousands=',')
+gdp_per_capita = pd.read_csv(datapath + "gdp_per_capita.csv",thousands=',',delimiter='\t',
+                             encoding='latin1', na_values="n/a")
+
+# Prepare the data
+country_stats = prepare_country_stats(oecd_bli, gdp_per_capita)
+X = np.c_[country_stats["GDP per capita"]]
+y = np.c_[country_stats["Life satisfaction"]]
+```
