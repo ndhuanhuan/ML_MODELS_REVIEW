@@ -32,7 +32,7 @@ housing_num = housing.drop("ocean_proximity", axis=1)
 imputer.fit(housing_num)
 ```
 
-# Handling Text and Categorical Attributes
+## Handling Text and Categorical Attributes
 ```
 >>> from sklearn.preprocessing import OrdinalEncoder
 >>> ordinal_encoder = OrdinalEncoder()
@@ -53,3 +53,7 @@ but if you really want to convert it to a (dense) NumPy array, just call the toa
 ```
 housing_cat_1hot.toarray()
 ```
+
+## Feature Scaling
+- Min-max scaling (many people call this normalization) is the simplest: values are shifted and rescaled so that they end up ranging from 0 to 1. We do this by subtracting the min value and dividing by the max minus the min. Scikit-Learn provides a transformer called MinMaxScaler for this.
+- Standardization is different: first it subtracts the mean value (so standardized values always have a zero mean), and then it divides by the standard deviation so that the resulting distribution has unit variance. Unlike min-max scaling, standardization does not bound values to a specific range, which may be a problem for some algorithms (e.g., neural networks often expect an input value ranging from 0 to 1)
