@@ -1,4 +1,8 @@
 # Basics
+## SKLearn Design
+- Estimators: Any object that can estimate some parameters based on a dataset is called an estimator (e.g., an imputer is an estimator). The estimation itself is performed by the fit() method, and it takes only a dataset as a parameter
+- Transformers: Some estimators (such as an imputer) can also transform a dataset; these are called transformers. Once again, the API is simple: the transformation is performed by the transform() method with the dataset to transform as a parameter. It returns the transformed dataset.
+- Predictors: Finally, some estimators, given a dataset, are capable of making predictions; they are called predictors.
 ## splitting training and testing data
 ```
 from sklearn.model_selection import StratifiedShuffleSplit
