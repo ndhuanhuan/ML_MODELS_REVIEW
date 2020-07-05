@@ -11,3 +11,15 @@ for train_index, test_index in split.split(housing, housing["income_cat"]):
 for set_ in (strat_train_set, strat_test_set):
     set_.drop("income_cat", axis=1, inplace=True)
 ```
+
+## Data Cleaning
+
+```
+from sklearn.impute import SimpleImputer
+
+imputer = SimpleImputer(strategy="median")
+
+housing_num = housing.drop("ocean_proximity", axis=1)
+
+imputer.fit(housing_num)
+```
