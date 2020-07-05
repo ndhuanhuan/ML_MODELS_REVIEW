@@ -38,4 +38,18 @@ imputer.fit(housing_num)
 >>> ordinal_encoder = OrdinalEncoder()
 >>> housing_cat_encoded = ordinal_encoder.fit_transform(housing_cat)
 >>> housing_cat_encoded[:10]
+ordinal_encoder.categories_
+```
+One issue with this representation is that ML algorithms will assume that two nearby values are more similar than two distant values.
+Fix:
+```
+>>> from sklearn.preprocessing import OneHotEncoder
+>>> cat_encoder = OneHotEncoder()
+>>> housing_cat_1hot = cat_encoder.fit_transform(housing_cat)
+>>> housing_cat_1hot
+cat_encoder.categories_
+```
+but if you really want to convert it to a (dense) NumPy array, just call the toarray() method:
+```
+housing_cat_1hot.toarray()
 ```
