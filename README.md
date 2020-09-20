@@ -43,3 +43,8 @@ https://towardsdatascience.com/activation-functions-and-its-types-which-is-bette
 - https://github.com/firmai/awesome-google-colab
 - https://github.com/tugstugi/dl-colab-notebooks
 - https://github.com/muellerzr/Practical-Deep-Learning-for-Coders-2.0
+
+
+# Random Reading 
+### Long Short-Term Memory Networks Are Dying: What’s Replacing It?
+- https://towardsdatascience.com/long-short-term-memory-networks-are-dying-whats-replacing-it-5ff3a99399fe
