@@ -101,6 +101,7 @@ def load_dataset(filenames, labeled=True, ordered=False):
         ignore_order.experimental_deterministic = False # disable order, increase speed
 
     dataset = tf.data.TFRecordDataset(filenames, num_parallel_reads=AUTO) # automatically interleaves reads from multiple files
+    # https://www.tensorflow.org/api_docs/python/tf/data/TFRecordDataset#with_options
     dataset = dataset.with_options(ignore_order) # uses data as soon as it streams in, rather than in its original order
     dataset = dataset.map(read_labeled_tfrecord if labeled else read_unlabeled_tfrecord, num_parallel_calls=AUTO)
     # returns a dataset of (image, label) pairs if labeled=True or (image, id) pairs if labeled=False
